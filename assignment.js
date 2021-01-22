@@ -3,17 +3,16 @@
 //Task-1
 function kilometerToMeter(distance){
     var meter = 0;
-    if (distance >= 0){
-        var value = distance;
-        meter = value / 1000;
+    if (typeof distance !== "number"){
+        return "Wrong input type";
     }
     else if( distance < 0){
-        console.log("Distance can not be Negative")
+        return "Distance can not be Negative";
     }
     else{
-        console.log("Wrong Input")
-    }
-    return meter;
+        meter = distance * 1000;
+        return meter;
+    }   
 } 
-var conversion = kilometerToMeter(3300);
-console.log("Your Converted value is:", conversion,"Meters");
+var conversion = kilometerToMeter(20);
+console.log(conversion);
